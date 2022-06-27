@@ -6,7 +6,9 @@
   "scripts": {
     "start": "parcel --open",
     "prebuild": "rm -rf ./dist",
-    "build": "parcel build --public-url ./"
+    "build": "parcel build --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "gh-pages"
@@ -15,6 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.2",
+    "gh-pages": "^4.0.0",
     "parcel": "^2.6.2"
   }
 }
