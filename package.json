@@ -4,7 +4,9 @@
   "description": "",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel --open"
+    "start": "parcel --open",
+    "prebuild": "rm -rf ./dist",
+    "build": "parcel build --public-url ./"
   },
   "keywords": [
     "gh-pages"
