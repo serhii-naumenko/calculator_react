@@ -1,1 +1,0 @@
-{"mappings":"ACAA","sources":["index.6b4e19f3.css","src/style.scss"],"sourcesContent":[".calculator__title {\n  color: #8a2be2;\n}\n\n/*# sourceMappingURL=index.6b4e19f3.css.map */\n",".calculator__title {\r\n  color:blueviolet;\r\n}"],"names":[],"version":3,"file":"index.6b4e19f3.css.map"}
