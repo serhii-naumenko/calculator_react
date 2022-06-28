@@ -2,13 +2,21 @@
   "name": "calculator_react",
   "version": "1.0.0",
   "description": "",
-  "source": "src/index.html",
+  "source": "./src/index.html",
   "scripts": {
     "start": "parcel --open",
     "prebuild": "rm -rf ./dist",
     "build": "parcel build --public-url ./",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "keywords": [
     "gh-pages"
@@ -17,7 +25,23 @@
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.2",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^4.0.0",
-    "parcel": "^2.6.2"
+    "parcel": "^2.6.2",
+    "process": "^0.11.10",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
