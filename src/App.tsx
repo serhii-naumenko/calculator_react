@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { Button } from './Button';
 import './App.scss';
 
 export function App() {
@@ -7,6 +8,7 @@ export function App() {
   const [isSign, setIsSign] = useState(false);
   const [action, setAction] = useState('');
   const [board, setBoard] = useState('');
+  // const [result, setResult] = useState('');
 
   const handlerDigit = useCallback((num: string) => {
     let firstElement = numberOne;
@@ -58,52 +60,63 @@ export function App() {
     const firstElement = numberOne;
     const secondElement = numberTwo;
     const operator = action;
-    let result = firstElement;
 
     if (operator === '/' && firstElement === '0') {
-      setNumberOne('Error');
+      setNumberOne('0');
+      setNumberTwo('0');
+      setBoard('Error');
       return;
     }
 
     switch (operator) {
       case '+':
-        result = String(parseFloat(secondElement) + parseFloat(firstElement));
+        console.log(firstElement);
+        console.log(secondElement);
+
+        setNumberOne(String(+secondElement + +firstElement));
         break;
 
       case '-':
-        result = String(+secondElement - +firstElement);
+        setNumberOne(String(+secondElement - +firstElement));
         break;
 
       case '*':
-        result = String(+secondElement * +firstElement);
+        setNumberOne(String(+secondElement * +firstElement));
         break;
 
       case '/':
-        result = String(+secondElement / +firstElement);
+        setNumberOne(String(+secondElement / +firstElement));
         break;
 
       default:
-        result = firstElement;
+        setNumberOne(firstElement);
     }
 
-    setNumberOne(result);
     setIsSign(true);
     setBoard('');
   }, [numberOne]);
 
   const handlerOperator = useCallback((sign: string) => {
-    const firstElement = numberOne;
     const tablo = board;
+    const firstElement = numberOne;
+    const secondElement = numberTwo;
+    const operator = action;
+    // const isOperator = isSign;
+    let result = firstElement;
+    console.log(`tab=${tablo}, first=${firstElement}, sec=${secondElement}`);
+    console.log(`op=${operator}, sign=${sign}`);
 
-    if (tablo.length > 0) {
-      handlerEquals();
-      console.log(tablo);
+    if (tablo.length > 0 && operator === '+') {
+      result = String(+secondElement + +firstElement);
+      setNumberTwo(result);
+    } else {
+      setNumberTwo(firstElement);
     }
 
-    setNumberTwo(firstElement);
     setAction(sign);
     setBoard(`${firstElement} ${sign}`);
     setIsSign(true);
+    // setNumberTwo(firstElement);
     setNumberOne('0');
   }, [numberOne]);
 
@@ -135,151 +148,132 @@ export function App() {
             </p>
           </div>
           <div className="calculator__buttons">
-            <button
+            <Button
               type="button"
-              className="calculator__button"
               onClick={handlerReset}
             >
               C
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={handlerDelDigit}
             >
               del
-            </button>
-            <button type="button" className="calculator__button">
-              X
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
+            >
+              X
+            </Button>
+            <Button
+              type="button"
               onClick={() => handlerOperator('+')}
             >
               +
-            </button>
+            </Button>
           </div>
           <div className="calculator__buttons">
-            <button
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerDigit('7')}
             >
               7
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerDigit('8')}
             >
               8
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerDigit('9')}
             >
               9
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerOperator('-')}
             >
               -
-            </button>
+            </Button>
           </div>
-
           <div className="calculator__buttons">
-            <button
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerDigit('4')}
             >
               4
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerDigit('5')}
             >
               5
-            </button>
-            <button
-              type="button"
-              className="calculator__button"
+            </Button>
+            <Button
               onClick={() => handlerDigit('6')}
             >
               6
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerOperator('*')}
             >
               *
-            </button>
+            </Button>
           </div>
           <div className="calculator__buttons">
-            <button
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerDigit('1')}
             >
               1
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerDigit('2')}
             >
               2
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerDigit('3')}
             >
               3
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerOperator('/')}
             >
               /
-            </button>
+            </Button>
           </div>
           <div className="calculator__buttons">
-            <button
+            <Button
               type="button"
-              className="calculator__button"
               onClick={handlerChangeSign}
             >
               +/-
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={() => handlerDigit('0')}
             >
               0
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={handlerComa}
             >
               ,
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
-              className="calculator__button"
               onClick={handlerEquals}
             >
               =
-            </button>
+            </Button>
           </div>
         </div>
       </section>
