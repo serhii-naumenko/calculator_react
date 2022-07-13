@@ -8,7 +8,6 @@ export function App() {
   const [isSign, setIsSign] = useState(false);
   const [action, setAction] = useState('');
   const [board, setBoard] = useState('');
-  // const [result, setResult] = useState('');
 
   const handlerDigit = useCallback((num: string) => {
     let firstElement = numberOne;
@@ -70,9 +69,6 @@ export function App() {
 
     switch (operator) {
       case '+':
-        console.log(firstElement);
-        console.log(secondElement);
-
         setNumberOne(String(+secondElement + +firstElement));
         break;
 
@@ -101,10 +97,7 @@ export function App() {
     const firstElement = numberOne;
     const secondElement = numberTwo;
     const operator = action;
-    // const isOperator = isSign;
     let result = firstElement;
-    console.log(`tab=${tablo}, first=${firstElement}, sec=${secondElement}`);
-    console.log(`op=${operator}, sign=${sign}`);
 
     if (tablo.length > 0 && operator === '+') {
       result = String(+secondElement + +firstElement);
@@ -116,7 +109,6 @@ export function App() {
     setAction(sign);
     setBoard(`${firstElement} ${sign}`);
     setIsSign(true);
-    // setNumberTwo(firstElement);
     setNumberOne('0');
   }, [numberOne]);
 
