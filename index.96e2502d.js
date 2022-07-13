@@ -27100,7 +27100,6 @@ function App() {
     const [isSign, setIsSign] = (0, _react.useState)(false);
     const [action, setAction] = (0, _react.useState)("");
     const [board, setBoard] = (0, _react.useState)("");
-    // const [result, setResult] = useState('');
     const handlerDigit = (0, _react.useCallback)((num)=>{
         let firstElement = numberOne;
         const isOperator = isSign;
@@ -27155,8 +27154,6 @@ function App() {
         }
         switch(operator){
             case "+":
-                console.log(firstElement);
-                console.log(secondElement);
                 setNumberOne(String(+secondElement + +firstElement));
                 break;
             case "-":
@@ -27181,10 +27178,7 @@ function App() {
         const firstElement = numberOne;
         const secondElement = numberTwo;
         const operator = action;
-        // const isOperator = isSign;
         let result = firstElement;
-        console.log(`tab=${tablo}, first=${firstElement}, sec=${secondElement}`);
-        console.log(`op=${operator}, sign=${sign}`);
         if (tablo.length > 0 && operator === "+") {
             result = String(+secondElement + +firstElement);
             setNumberTwo(result);
@@ -27192,7 +27186,6 @@ function App() {
         setAction(sign);
         setBoard(`${firstElement} ${sign}`);
         setIsSign(true);
-        // setNumberTwo(firstElement);
         setNumberOne("0");
     }, [
         numberOne
@@ -27212,7 +27205,7 @@ function App() {
                 children: "Hello"
             }, void 0, false, {
                 fileName: "src/App.tsx",
-                lineNumber: 139,
+                lineNumber: 131,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
@@ -27228,7 +27221,7 @@ function App() {
                                     children: board
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 143,
+                                    lineNumber: 135,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27236,7 +27229,51 @@ function App() {
                                     children: numberOne
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 138,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/App.tsx",
+                            lineNumber: 134,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "calculator__buttons",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
+                                    type: "button",
+                                    onClick: handlerReset,
+                                    children: "C"
+                                }, void 0, false, {
+                                    fileName: "src/App.tsx",
+                                    lineNumber: 143,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
+                                    type: "button",
+                                    onClick: handlerDelDigit,
+                                    children: "del"
+                                }, void 0, false, {
+                                    fileName: "src/App.tsx",
+                                    lineNumber: 149,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
+                                    type: "button",
+                                    children: "X"
+                                }, void 0, false, {
+                                    fileName: "src/App.tsx",
+                                    lineNumber: 155,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
+                                    type: "button",
+                                    onClick: ()=>handlerOperator("+"),
+                                    children: "+"
+                                }, void 0, false, {
+                                    fileName: "src/App.tsx",
+                                    lineNumber: 160,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -27250,55 +27287,11 @@ function App() {
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
                                     type: "button",
-                                    onClick: handlerReset,
-                                    children: "C"
-                                }, void 0, false, {
-                                    fileName: "src/App.tsx",
-                                    lineNumber: 151,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
-                                    type: "button",
-                                    onClick: handlerDelDigit,
-                                    children: "del"
-                                }, void 0, false, {
-                                    fileName: "src/App.tsx",
-                                    lineNumber: 157,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
-                                    type: "button",
-                                    children: "X"
-                                }, void 0, false, {
-                                    fileName: "src/App.tsx",
-                                    lineNumber: 163,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
-                                    type: "button",
-                                    onClick: ()=>handlerOperator("+"),
-                                    children: "+"
-                                }, void 0, false, {
-                                    fileName: "src/App.tsx",
-                                    lineNumber: 168,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/App.tsx",
-                            lineNumber: 150,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "calculator__buttons",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
-                                    type: "button",
                                     onClick: ()=>handlerDigit("7"),
                                     children: "7"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 176,
+                                    lineNumber: 168,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27307,7 +27300,7 @@ function App() {
                                     children: "8"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 182,
+                                    lineNumber: 174,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27316,7 +27309,7 @@ function App() {
                                     children: "9"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 188,
+                                    lineNumber: 180,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27325,13 +27318,13 @@ function App() {
                                     children: "-"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 194,
+                                    lineNumber: 186,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/App.tsx",
-                            lineNumber: 175,
+                            lineNumber: 167,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27343,7 +27336,7 @@ function App() {
                                     children: "4"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 202,
+                                    lineNumber: 194,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27352,7 +27345,7 @@ function App() {
                                     children: "5"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 208,
+                                    lineNumber: 200,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27360,7 +27353,7 @@ function App() {
                                     children: "6"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 206,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27369,13 +27362,13 @@ function App() {
                                     children: "*"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 219,
+                                    lineNumber: 211,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/App.tsx",
-                            lineNumber: 201,
+                            lineNumber: 193,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27387,7 +27380,7 @@ function App() {
                                     children: "1"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 227,
+                                    lineNumber: 219,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27396,7 +27389,7 @@ function App() {
                                     children: "2"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 233,
+                                    lineNumber: 225,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27405,7 +27398,7 @@ function App() {
                                     children: "3"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 239,
+                                    lineNumber: 231,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27414,13 +27407,13 @@ function App() {
                                     children: "/"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 245,
+                                    lineNumber: 237,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/App.tsx",
-                            lineNumber: 226,
+                            lineNumber: 218,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27432,7 +27425,7 @@ function App() {
                                     children: "+/-"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 253,
+                                    lineNumber: 245,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27441,7 +27434,7 @@ function App() {
                                     children: "0"
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 259,
+                                    lineNumber: 251,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27450,7 +27443,7 @@ function App() {
                                     children: ","
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 265,
+                                    lineNumber: 257,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _button.Button), {
@@ -27459,30 +27452,30 @@ function App() {
                                     children: "="
                                 }, void 0, false, {
                                     fileName: "src/App.tsx",
-                                    lineNumber: 271,
+                                    lineNumber: 263,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/App.tsx",
-                            lineNumber: 252,
+                            lineNumber: 244,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/App.tsx",
-                    lineNumber: 141,
+                    lineNumber: 133,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/App.tsx",
-                lineNumber: 140,
+                lineNumber: 132,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/App.tsx",
-        lineNumber: 138,
+        lineNumber: 130,
         columnNumber: 5
     }, this);
 }
