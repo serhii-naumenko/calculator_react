@@ -142,23 +142,27 @@ export function App() {
           <div className="calculator__buttons">
             <Button
               type="button"
+              operator
               onClick={handlerReset}
             >
               C
             </Button>
             <Button
               type="button"
+              operator
               onClick={handlerDelDigit}
             >
               del
             </Button>
             <Button
               type="button"
+              withoutHover
             >
               X
             </Button>
             <Button
               type="button"
+              operator
               onClick={() => handlerOperator('+')}
             >
               +
@@ -185,6 +189,7 @@ export function App() {
             </Button>
             <Button
               type="button"
+              operator
               onClick={() => handlerOperator('-')}
             >
               -
@@ -210,6 +215,7 @@ export function App() {
             </Button>
             <Button
               type="button"
+              operator
               onClick={() => handlerOperator('*')}
             >
               *
@@ -236,6 +242,7 @@ export function App() {
             </Button>
             <Button
               type="button"
+              operator
               onClick={() => handlerOperator('/')}
             >
               /
@@ -244,6 +251,7 @@ export function App() {
           <div className="calculator__buttons">
             <Button
               type="button"
+              plusMinus
               onClick={handlerChangeSign}
             >
               +/-
@@ -262,6 +270,7 @@ export function App() {
             </Button>
             <Button
               type="button"
+              equals
               onClick={handlerEquals}
             >
               =
