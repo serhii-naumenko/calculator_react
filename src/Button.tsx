@@ -12,6 +12,7 @@ export const Button = styled.button<Props>`
   width: 40px;
   border: 1px solid black;
   cursor: pointer;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: rgb(176, 181, 188);
