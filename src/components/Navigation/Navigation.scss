@@ -1,0 +1,33 @@
+.Navigation {
+  display: flex;
+  height: 60px;
+  background-color: aquamarine;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    display: flex;
+  }
+  
+  &__item {
+    list-style: none;
+    padding: 0 20px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  &__link {
+    text-decoration: none;
+    color: brown;
+    font-weight: bolder;
+
+    &--active {
+      text-decoration: underline;
+      color: rgb(224, 22, 22);
+      font-weight: bolder;
+    }
+  }
+}
