@@ -27102,72 +27102,14 @@ var _calculator = require("./components/Calculator");
 var _convertor = require("./components/Convertor");
 var _appScss = require("./App.scss");
 var _notFound = require("./components/NotFound");
+var _navigation = require("./components/Navigation");
 function App() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "App",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
-                className: "App__nav nav",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                    className: "nav__list",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            className: "nav__item",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
-                                className: ({ isActive  })=>isActive ? "nav__link--active" : "nav__link",
-                                to: "calculator",
-                                children: "Calculator"
-                            }, void 0, false, {
-                                fileName: "src/App.tsx",
-                                lineNumber: 14,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/App.tsx",
-                            lineNumber: 13,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            className: "nav__item",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
-                                className: ({ isActive  })=>isActive ? "nav__link--active" : "nav__link",
-                                to: "convertor",
-                                children: "Convertor"
-                            }, void 0, false, {
-                                fileName: "src/App.tsx",
-                                lineNumber: 25,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/App.tsx",
-                            lineNumber: 24,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            className: "nav__item",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
-                                className: ({ isActive  })=>isActive ? "nav__link--active" : "nav__link",
-                                to: "about",
-                                children: "About"
-                            }, void 0, false, {
-                                fileName: "src/App.tsx",
-                                lineNumber: 36,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/App.tsx",
-                            lineNumber: 35,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/App.tsx",
-                    lineNumber: 12,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navigation.Navigation), {}, void 0, false, {
                 fileName: "src/App.tsx",
-                lineNumber: 11,
+                lineNumber: 12,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27175,19 +27117,27 @@ function App() {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "calculator",
+                            path: "/calculator",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _calculator.Calculator), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.tsx",
-                            lineNumber: 50,
+                            lineNumber: 15,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "convertor",
+                            path: "/convertor",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _convertor.Convertor), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.tsx",
-                            lineNumber: 51,
+                            lineNumber: 16,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _calculator.Calculator), {}, void 0, false, void 0, void 0)
+                        }, void 0, false, {
+                            fileName: "src/App.tsx",
+                            lineNumber: 17,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27195,24 +27145,24 @@ function App() {
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _notFound.NotFound), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.tsx",
-                            lineNumber: 52,
+                            lineNumber: 18,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/App.tsx",
-                    lineNumber: 49,
+                    lineNumber: 14,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/App.tsx",
-                lineNumber: 48,
+                lineNumber: 13,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/App.tsx",
-        lineNumber: 10,
+        lineNumber: 11,
         columnNumber: 5
     }, this);
 }
@@ -27225,7 +27175,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./App.scss":"c8Etz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"fdOAw","./components/Calculator":"60XyO","./components/Convertor":"7c2IT","./components/NotFound":"2IMz3"}],"c8Etz":[function() {},{}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./App.scss":"c8Etz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"fdOAw","./components/Calculator":"60XyO","./components/Convertor":"7c2IT","./components/NotFound":"2IMz3","./components/Navigation":"lyfSW"}],"c8Etz":[function() {},{}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -31229,13 +31179,54 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _convertorScss = require("./Convertor.scss");
+var _indicator = require("../Indicator");
 function Convertor() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "Convertor",
-        children: "Convertor"
-    }, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _indicator.Indicator), {}, void 0, false, {
+                fileName: "src/components/Convertor/Convertor.tsx",
+                lineNumber: 8,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                title: "shoose an action",
+                name: "action",
+                className: "Convertor__actions",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "buy",
+                        className: "Convertor__action-item",
+                        children: "Buy"
+                    }, void 0, false, {
+                        fileName: "src/components/Convertor/Convertor.tsx",
+                        lineNumber: 14,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "sell",
+                        className: "Convertor__action-item",
+                        children: "Sell"
+                    }, void 0, false, {
+                        fileName: "src/components/Convertor/Convertor.tsx",
+                        lineNumber: 20,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Convertor/Convertor.tsx",
+                lineNumber: 9,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _indicator.Indicator), {}, void 0, false, {
+                fileName: "src/components/Convertor/Convertor.tsx",
+                lineNumber: 27,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "src/components/Convertor/Convertor.tsx",
-        lineNumber: 6,
+        lineNumber: 7,
         columnNumber: 5
     }, this);
 }
@@ -31248,7 +31239,114 @@ $RefreshReg$(_c, "Convertor");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Convertor.scss":"7uYzz"}],"7uYzz":[function() {},{}],"2IMz3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Convertor.scss":"7uYzz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Indicator":"c9Jkm"}],"7uYzz":[function() {},{}],"c9Jkm":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _indicator = require("./Indicator");
+parcelHelpers.exportAll(_indicator, exports);
+
+},{"./Indicator":"2cSEc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2cSEc":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b7e6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b7e6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Indicator", ()=>Indicator);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _indicatorScss = require("./Indicator.scss");
+var _s = $RefreshSig$();
+function Indicator() {
+    _s();
+    const [currentValue, setCurrentValue] = (0, _react.useState)("default");
+    const handlerChangeCurrency = (value)=>{
+        setCurrentValue(value);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Indicator",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                title: "select currency",
+                name: "currency",
+                className: "Indicator__currency",
+                value: currentValue,
+                onChange: (event)=>handlerChangeCurrency(event.target.value),
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "default",
+                        className: "Indicator__currency-item",
+                        disabled: true,
+                        children: "Choose a currency"
+                    }, void 0, false, {
+                        fileName: "src/components/Indicator/Indicator.tsx",
+                        lineNumber: 19,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "USD",
+                        className: "Indicator__currency-item",
+                        children: "USD"
+                    }, void 0, false, {
+                        fileName: "src/components/Indicator/Indicator.tsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "EUR",
+                        className: "Indicator__currency-item",
+                        children: "EUR"
+                    }, void 0, false, {
+                        fileName: "src/components/Indicator/Indicator.tsx",
+                        lineNumber: 32,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "HUA",
+                        className: "Indicator__currency-item",
+                        children: "HUA"
+                    }, void 0, false, {
+                        fileName: "src/components/Indicator/Indicator.tsx",
+                        lineNumber: 38,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Indicator/Indicator.tsx",
+                lineNumber: 12,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                type: "text",
+                className: "Indicator__input",
+                name: "amount",
+                placeholder: "enter amount"
+            }, void 0, false, {
+                fileName: "src/components/Indicator/Indicator.tsx",
+                lineNumber: 45,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Indicator/Indicator.tsx",
+        lineNumber: 11,
+        columnNumber: 5
+    }, this);
+}
+_s(Indicator, "wtVbiFliNxBC8v+pdet3fh2BJ+I=");
+_c = Indicator;
+var _c;
+$RefreshReg$(_c, "Indicator");
+
+  $parcel$ReactRefreshHelpers$b7e6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Indicator.scss":"62WGy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"62WGy":[function() {},{}],"2IMz3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _notFound = require("./NotFound");
@@ -31287,6 +31385,102 @@ $RefreshReg$(_c, "NotFound");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./NotFound.scss":"dY08S"}],"dY08S":[function() {},{}]},["1xC6H","93See","l4cos"], "l4cos", "parcelRequireb822")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./NotFound.scss":"dY08S","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dY08S":[function() {},{}],"lyfSW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _navigation = require("./Navigation");
+parcelHelpers.exportAll(_navigation, exports);
+
+},{"./Navigation":"fzeYQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fzeYQ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a3a0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a3a0.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Navigation", ()=>Navigation);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _navigationScss = require("./Navigation.scss");
+function Navigation() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Navigation",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+            className: "Navigation__list",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "Navigation__item",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
+                        className: ({ isActive  })=>isActive ? "Navigation__link--active" : "Navigation__link",
+                        to: "/calculator",
+                        children: "Calculator"
+                    }, void 0, false, {
+                        fileName: "src/components/Navigation/Navigation.tsx",
+                        lineNumber: 10,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/Navigation/Navigation.tsx",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "Navigation__item",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
+                        className: ({ isActive  })=>isActive ? "Navigation__link--active" : "Navigation__link",
+                        to: "/convertor",
+                        children: "Convertor"
+                    }, void 0, false, {
+                        fileName: "src/components/Navigation/Navigation.tsx",
+                        lineNumber: 21,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/Navigation/Navigation.tsx",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "Navigation__item",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
+                        className: ({ isActive  })=>isActive ? "Navigation__link--active" : "Navigation__link",
+                        to: "/aboutus",
+                        children: "About us"
+                    }, void 0, false, {
+                        fileName: "src/components/Navigation/Navigation.tsx",
+                        lineNumber: 32,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/Navigation/Navigation.tsx",
+                    lineNumber: 31,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/Navigation/Navigation.tsx",
+            lineNumber: 8,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "src/components/Navigation/Navigation.tsx",
+        lineNumber: 7,
+        columnNumber: 5
+    }, this);
+}
+_c = Navigation;
+var _c;
+$RefreshReg$(_c, "Navigation");
+
+  $parcel$ReactRefreshHelpers$a3a0.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","./Navigation.scss":"aYcFb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aYcFb":[function() {},{}]},["1xC6H","93See","l4cos"], "l4cos", "parcelRequireb822")
 
 //# sourceMappingURL=index.96e2502d.js.map

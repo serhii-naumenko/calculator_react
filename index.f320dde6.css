@@ -11,40 +11,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 100%;
 }
 
-.nav {
-  height: 60px;
-  background-color: #7fffd4;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.nav__list {
-  display: flex;
-}
-
-.nav__item {
-  padding: 0 20px;
-  list-style: none;
-  transition: transform .3s;
-}
-
-.nav__item:hover {
-  transform: scale(1.1);
-}
-
-.nav__link {
-  color: brown;
-  font-weight: bolder;
-  text-decoration: none;
-}
-
-.nav__link--active {
-  color: #e01616;
-  font-weight: bolder;
-  text-decoration: underline;
-}
-
 .Calculator {
   width: 550px;
   height: 400px;
@@ -90,8 +56,33 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .Convertor {
   text-align: center;
+  justify-content: center;
+  gap: 50px;
   margin-top: 15px;
   font-size: 35px;
+  display: flex;
+}
+
+.Convertor__actions {
+  width: 100px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.Indicator {
+  flex-direction: column;
+  display: flex;
+}
+
+.Indicator__input {
+  width: 300px;
+  border: 1px solid #000;
+  padding: 5px 10px;
+}
+
+.Indicator__currency {
+  padding: 10px;
 }
 
 .NotFound {
@@ -100,6 +91,40 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   letter-spacing: 5px;
   margin-top: 20px;
   font-size: 40px;
+}
+
+.Navigation {
+  height: 60px;
+  background-color: #7fffd4;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.Navigation__list {
+  display: flex;
+}
+
+.Navigation__item {
+  padding: 0 20px;
+  list-style: none;
+  transition: transform .3s;
+}
+
+.Navigation__item:hover {
+  transform: scale(1.1);
+}
+
+.Navigation__link {
+  color: brown;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.Navigation__link--active {
+  color: #e01616;
+  font-weight: bolder;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=index.f320dde6.css.map */
