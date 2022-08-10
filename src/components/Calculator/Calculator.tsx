@@ -100,7 +100,7 @@ export function Calculator() {
     let result = firstElement;
 
     if (tablo.length > 0 && operator === '+') {
-      result = String(+secondElement + +firstElement);
+      result = (+secondElement + +firstElement).toString();
       setNumberTwo(result);
     } else {
       setNumberTwo(firstElement);
@@ -140,14 +140,14 @@ export function Calculator() {
         <div className="Calculator__buttons">
           <Button
             type="button"
-            operator
+            operant
             onClick={handlerReset}
           >
             C
           </Button>
           <Button
             type="button"
-            operator
+            operant
             onClick={handlerDelDigit}
           >
             del
@@ -158,7 +158,7 @@ export function Calculator() {
           />
           <Button
             type="button"
-            operator
+            operant
             onClick={() => handlerOperator('+')}
           >
             +
@@ -185,7 +185,7 @@ export function Calculator() {
           </Button>
           <Button
             type="button"
-            operator
+            operant
             onClick={() => handlerOperator('-')}
           >
             -
@@ -211,7 +211,7 @@ export function Calculator() {
           </Button>
           <Button
             type="button"
-            operator
+            operant
             onClick={() => handlerOperator('*')}
           >
             *
@@ -238,7 +238,7 @@ export function Calculator() {
           </Button>
           <Button
             type="button"
-            operator
+            operant
             onClick={() => handlerOperator('/')}
           >
             /

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 interface Props {
-  operator?: boolean,
+  operant?: boolean,
   plusMinus?: boolean,
   equals?: boolean,
   withoutHover?: boolean
@@ -18,7 +18,7 @@ export const Button = styled.button<Props>`
     background-color: rgb(176, 181, 188);
   }
 
-  ${(props) => props.operator
+  ${(props) => props.operant
   && css`
     background-color: aquamarine;
 
