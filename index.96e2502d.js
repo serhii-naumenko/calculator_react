@@ -27109,7 +27109,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _calculator = require("./components/Calculator");
-var _convertor = require("./components/Convertor");
+var _converter = require("./components/Converter");
 var _appScss = require("./App.scss");
 var _notFound = require("./components/NotFound");
 var _navigation = require("./components/Navigation");
@@ -27135,8 +27135,8 @@ function App() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/convertor",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _convertor.Convertor), {}, void 0, false, void 0, void 0)
+                            path: "/converter",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _converter.Converter), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.tsx",
                             lineNumber: 16,
@@ -27185,7 +27185,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./App.scss":"c8Etz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"fdOAw","./components/Calculator":"60XyO","./components/Convertor":"7c2IT","./components/NotFound":"2IMz3","./components/Navigation":"lyfSW"}],"c8Etz":[function() {},{}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./App.scss":"c8Etz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"fdOAw","./components/Calculator":"60XyO","./components/NotFound":"2IMz3","./components/Navigation":"lyfSW","./components/Converter":"fyzVI"}],"c8Etz":[function() {},{}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -31169,239 +31169,7 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 }
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"7EuwB"}],"8TAiA":[function() {},{}],"7c2IT":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _convertor = require("./Convertor");
-parcelHelpers.exportAll(_convertor, exports);
-
-},{"./Convertor":"im3JF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"im3JF":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0746 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0746.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Convertor", ()=>Convertor);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _convertorScss = require("./Convertor.scss");
-var _api = require("../../api/api");
-var _s = $RefreshSig$();
-function Convertor() {
-    _s();
-    const [typePurchasing, setTypePurchasing] = (0, _react.useState)("buy");
-    const [allRates, setAllRates] = (0, _react.useState)([
-        {
-            ccy: "UAH",
-            buy: "1",
-            sale: "1"
-        }
-    ]);
-    const [exchangeCurrency, setExchangeCarrency] = (0, _react.useState)("USD");
-    const [firstValue, setFirstValue] = (0, _react.useState)("");
-    const [secondValue, setSecondValue] = (0, _react.useState)("");
-    const [rate, setRate] = (0, _react.useState)("1");
-    const [isActiveFirstField, setIsActiveFirstField] = (0, _react.useState)(true);
-    const arrayDependence = [
-        firstValue,
-        secondValue,
-        exchangeCurrency,
-        typePurchasing,
-        rate,
-        isActiveFirstField, 
-    ];
-    (0, _react.useEffect)(()=>{
-        async function response() {
-            try {
-                const ratesFromServer = await (0, _api.getCouresesCurrencies)();
-                const gottenRates = [
-                    ...ratesFromServer
-                ];
-                setAllRates(gottenRates);
-                const chosenRate = gottenRates[0].buy;
-                if (chosenRate) setRate(chosenRate);
-            } catch  {
-                throw Error;
-            }
-        }
-        response();
-    }, []);
-    const handlerChangeValue1 = (0, _react.useCallback)((newValue1, currentRate)=>{
-        const newValue2 = (+newValue1 / +currentRate).toString();
-        setSecondValue(newValue2);
-        setFirstValue(newValue1);
-        setIsActiveFirstField(true);
-    }, arrayDependence);
-    const handlerChangeValue2 = (0, _react.useCallback)((newValue2, currentRate)=>{
-        const newValue1 = (+newValue2 * +currentRate).toString();
-        setSecondValue(newValue2);
-        setFirstValue(newValue1);
-        setIsActiveFirstField(false);
-    }, arrayDependence);
-    const handlerTypePurchasing = (0, _react.useCallback)((chosenType)=>{
-        const currency = exchangeCurrency;
-        const value1 = firstValue;
-        const value2 = secondValue;
-        const isActive = isActiveFirstField;
-        setTypePurchasing(chosenType);
-        const oneOfRates = allRates.find((chRate)=>chRate.ccy === currency);
-        if (oneOfRates) {
-            const chosenCourse = oneOfRates[chosenType];
-            setRate(chosenCourse);
-            if (isActive) handlerChangeValue1(value1, chosenCourse);
-            else handlerChangeValue2(value2, chosenCourse);
-        }
-    }, arrayDependence);
-    const handlerChangeCurrency = (0, _react.useCallback)((exactCurrensy)=>{
-        const kindOfDeal = typePurchasing;
-        const value1 = firstValue;
-        const value2 = secondValue;
-        const isActive = isActiveFirstField;
-        setExchangeCarrency(exactCurrensy);
-        const oneOfRates = allRates.find((chRate)=>chRate.ccy === exactCurrensy);
-        if (oneOfRates) {
-            const chosenCourse = oneOfRates[kindOfDeal];
-            setRate(chosenCourse);
-            if (isActive) handlerChangeValue1(value1, chosenCourse);
-            else handlerChangeValue2(value2, chosenCourse);
-        }
-    }, arrayDependence);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "Convertor",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                type: "text",
-                className: "Convertor__input",
-                name: "amount",
-                placeholder: "enter amount",
-                value: (Math.round(+firstValue * 100) / 100).toString(),
-                onChange: (event)=>handlerChangeValue1(event.target.value, rate)
-            }, void 0, false, {
-                fileName: "src/components/Convertor/Convertor.tsx",
-                lineNumber: 98,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
-                title: "shoose an action",
-                name: "action",
-                className: "Convertor__actions",
-                onChange: (event)=>handlerTypePurchasing(event.target.value),
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
-                        value: "buy",
-                        className: "Convertor__action-item",
-                        children: "Buy"
-                    }, void 0, false, {
-                        fileName: "src/components/Convertor/Convertor.tsx",
-                        lineNumber: 112,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
-                        value: "sale",
-                        className: "Convertor__action-item",
-                        children: "Sale"
-                    }, void 0, false, {
-                        fileName: "src/components/Convertor/Convertor.tsx",
-                        lineNumber: 118,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Convertor/Convertor.tsx",
-                lineNumber: 106,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
-                title: "select currency",
-                name: "currency",
-                className: "Convertor__currency",
-                value: exchangeCurrency,
-                onChange: (event)=>handlerChangeCurrency(event.target.value),
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
-                        value: "USD",
-                        className: "Convertor__currency-item",
-                        children: "USD"
-                    }, void 0, false, {
-                        fileName: "src/components/Convertor/Convertor.tsx",
-                        lineNumber: 132,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
-                        value: "EUR",
-                        className: "Convertor__currency-item",
-                        children: "EUR"
-                    }, void 0, false, {
-                        fileName: "src/components/Convertor/Convertor.tsx",
-                        lineNumber: 138,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Convertor/Convertor.tsx",
-                lineNumber: 125,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                type: "text",
-                className: "Convertor__input",
-                name: "amount",
-                placeholder: "enter amount",
-                value: (Math.round(+secondValue * 100) / 100).toString(),
-                onChange: (event)=>handlerChangeValue2(event.target.value, rate)
-            }, void 0, false, {
-                fileName: "src/components/Convertor/Convertor.tsx",
-                lineNumber: 145,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Convertor/Convertor.tsx",
-        lineNumber: 97,
-        columnNumber: 5
-    }, this);
-}
-_s(Convertor, "oMk/fME1G0rODcmqRKtqR3CFL+k=");
-_c = Convertor;
-var _c;
-$RefreshReg$(_c, "Convertor");
-
-  $parcel$ReactRefreshHelpers$0746.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Convertor.scss":"7uYzz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../api/api":"kiSD7"}],"7uYzz":[function() {},{}],"kiSD7":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getCouresesCurrencies", ()=>getCouresesCurrencies);
-const API_URL = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
-const getCouresesCurrencies = async ()=>{
-    const response = await fetch(`${API_URL}`, {
-        method: "GET"
-    });
-    const result = await response.json().catch((error)=>{
-        throw Error(`${error}`);
-    });
-    return result;
-}; // const request = async (options: {}) => {
- //   const response = await fetch(`${API_URL}`, options);
- //   const result = await response.json()
- //     .catch((error) => {
- //       throw Error(`${error}`);
- //     });
- //   return result;
- // };
- // export const getCouresesCurrencies = async (): Promise<BankRate[]> => {
- //   const result = await request({ method: 'GET' });
- //   return result;
- // };
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2IMz3":[function(require,module,exports) {
+},{"react-is":"7EuwB"}],"8TAiA":[function() {},{}],"2IMz3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _notFound = require("./NotFound");
@@ -31487,8 +31255,8 @@ function Navigation() {
                     className: "Navigation__item",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
                         className: ({ isActive  })=>isActive ? "Navigation__link--active" : "Navigation__link",
-                        to: "/convertor",
-                        children: "Convertor"
+                        to: "/converter",
+                        children: "Converter"
                     }, void 0, false, {
                         fileName: "src/components/Navigation/Navigation.tsx",
                         lineNumber: 21,
@@ -31536,7 +31304,272 @@ $RefreshReg$(_c, "Navigation");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","./Navigation.scss":"aYcFb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aYcFb":[function() {},{}],"bdVon":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","./Navigation.scss":"aYcFb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aYcFb":[function() {},{}],"fyzVI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _converter = require("./Converter");
+parcelHelpers.exportAll(_converter, exports);
+
+},{"./Converter":"aswYd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aswYd":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2157 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2157.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Converter", ()=>Converter);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _converterScss = require("./Converter.scss");
+var _api = require("../../api/api");
+var _s = $RefreshSig$();
+function Converter() {
+    _s();
+    const [typePurchasing, setTypePurchasing] = (0, _react.useState)("buy");
+    const [allRates, setAllRates] = (0, _react.useState)([
+        {
+            ccy: "UAH",
+            buy: "1",
+            sale: "1"
+        }
+    ]);
+    const [exchangeCurrency, setExchangeCarrency] = (0, _react.useState)("USD");
+    const [firstValue, setFirstValue] = (0, _react.useState)("");
+    const [secondValue, setSecondValue] = (0, _react.useState)("");
+    const [rate, setRate] = (0, _react.useState)("1");
+    const [isActiveFirstField, setIsActiveFirstField] = (0, _react.useState)(true);
+    const arrayDependence = [
+        firstValue,
+        secondValue,
+        exchangeCurrency,
+        typePurchasing,
+        rate,
+        isActiveFirstField, 
+    ];
+    (0, _react.useEffect)(()=>{
+        async function response() {
+            try {
+                const ratesFromServer = await (0, _api.getCouresesCurrencies)();
+                const gottenRates = [
+                    ...ratesFromServer
+                ];
+                setAllRates(gottenRates);
+                const chosenRate = gottenRates[0].buy;
+                if (chosenRate) setRate(chosenRate);
+            } catch  {
+                throw Error;
+            }
+        }
+        response();
+    }, []);
+    const handlerChangeValue1 = (0, _react.useCallback)((newValue1, currentRate)=>{
+        const newValue2 = (+newValue1 / +currentRate).toString();
+        setSecondValue(newValue2);
+        setFirstValue(newValue1);
+        setIsActiveFirstField(true);
+    }, arrayDependence);
+    const handlerChangeValue2 = (0, _react.useCallback)((newValue2, currentRate)=>{
+        const newValue1 = (+newValue2 * +currentRate).toString();
+        setSecondValue(newValue2);
+        setFirstValue(newValue1);
+        setIsActiveFirstField(false);
+    }, arrayDependence);
+    const handlerTypePurchasing = (0, _react.useCallback)((chosenType)=>{
+        const currency = exchangeCurrency;
+        const value1 = firstValue;
+        const value2 = secondValue;
+        const isActive = isActiveFirstField;
+        setTypePurchasing(chosenType);
+        const oneOfRates = allRates.find((chRate)=>chRate.ccy === currency);
+        if (oneOfRates) {
+            const chosenCourse = oneOfRates[chosenType];
+            setRate(chosenCourse);
+            if (isActive) handlerChangeValue1(value1, chosenCourse);
+            else handlerChangeValue2(value2, chosenCourse);
+        }
+    }, arrayDependence);
+    const handlerChangeCurrency = (0, _react.useCallback)((exactCurrensy)=>{
+        const kindOfDeal = typePurchasing;
+        const value1 = firstValue;
+        const value2 = secondValue;
+        const isActive = isActiveFirstField;
+        setExchangeCarrency(exactCurrensy);
+        const oneOfRates = allRates.find((chRate)=>chRate.ccy === exactCurrensy);
+        if (oneOfRates) {
+            const chosenCourse = oneOfRates[kindOfDeal];
+            setRate(chosenCourse);
+            if (isActive) handlerChangeValue1(value1, chosenCourse);
+            else handlerChangeValue2(value2, chosenCourse);
+        }
+    }, arrayDependence);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Converter",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Converter__input-group",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "Converter__title-input",
+                        children: "UAH"
+                    }, void 0, false, {
+                        fileName: "src/components/Converter/Converter.tsx",
+                        lineNumber: 99,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        className: "Converter__input",
+                        name: "amount",
+                        placeholder: "enter amount",
+                        value: (Math.round(+firstValue * 100) / 100).toString(),
+                        onChange: (event)=>handlerChangeValue1(event.target.value, rate)
+                    }, void 0, false, {
+                        fileName: "src/components/Converter/Converter.tsx",
+                        lineNumber: 102,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Converter/Converter.tsx",
+                lineNumber: 98,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                title: "shoose an action",
+                name: "action",
+                className: "Converter__actions-currency",
+                onChange: (event)=>handlerTypePurchasing(event.target.value),
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "buy",
+                        className: "Converter__action-item",
+                        children: "Buy"
+                    }, void 0, false, {
+                        fileName: "src/components/Converter/Converter.tsx",
+                        lineNumber: 117,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "sale",
+                        className: "Converter__action-item",
+                        children: "Sale"
+                    }, void 0, false, {
+                        fileName: "src/components/Converter/Converter.tsx",
+                        lineNumber: 123,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Converter/Converter.tsx",
+                lineNumber: 111,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                title: "select currency",
+                name: "currency",
+                className: "Converter__actions-currency",
+                value: exchangeCurrency,
+                onChange: (event)=>handlerChangeCurrency(event.target.value),
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "USD",
+                        className: "Converter__currency-item",
+                        children: "USD"
+                    }, void 0, false, {
+                        fileName: "src/components/Converter/Converter.tsx",
+                        lineNumber: 137,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                        value: "EUR",
+                        className: "Converter__currency-item",
+                        children: "EUR"
+                    }, void 0, false, {
+                        fileName: "src/components/Converter/Converter.tsx",
+                        lineNumber: 143,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Converter/Converter.tsx",
+                lineNumber: 130,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Converter__input-group",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "Converter__title-input",
+                        children: exchangeCurrency
+                    }, void 0, false, {
+                        fileName: "src/components/Converter/Converter.tsx",
+                        lineNumber: 151,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        className: "Converter__input",
+                        name: "amount",
+                        value: (Math.round(+secondValue * 100) / 100).toString(),
+                        onChange: (event)=>handlerChangeValue2(event.target.value, rate)
+                    }, void 0, false, {
+                        fileName: "src/components/Converter/Converter.tsx",
+                        lineNumber: 154,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Converter/Converter.tsx",
+                lineNumber: 150,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Converter/Converter.tsx",
+        lineNumber: 97,
+        columnNumber: 5
+    }, this);
+}
+_s(Converter, "oMk/fME1G0rODcmqRKtqR3CFL+k=");
+_c = Converter;
+var _c;
+$RefreshReg$(_c, "Converter");
+
+  $parcel$ReactRefreshHelpers$2157.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Converter.scss":"dTao5","../../api/api":"kiSD7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dTao5":[function() {},{}],"kiSD7":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getCouresesCurrencies", ()=>getCouresesCurrencies);
+const API_URL = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
+const getCouresesCurrencies = async ()=>{
+    const response = await fetch(`${API_URL}`, {
+        method: "GET"
+    });
+    const result = await response.json().catch((error)=>{
+        throw Error(`${error}`);
+    });
+    return result;
+}; // const request = async (options: {}) => {
+ //   const response = await fetch(`${API_URL}`, options);
+ //   const result = await response.json()
+ //     .catch((error) => {
+ //       throw Error(`${error}`);
+ //     });
+ //   return result;
+ // };
+ // export const getCouresesCurrencies = async (): Promise<BankRate[]> => {
+ //   const result = await request({ method: 'GET' });
+ //   return result;
+ // };
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bdVon":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "batch", ()=>(0, _reactBatchedUpdates.unstable_batchedUpdates));
