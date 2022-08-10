@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Calculator } from './components/Calculator';
-import { Convertor } from './components/Convertor';
+import { Converter } from './components/Converter';
 import './App.scss';
 import { NotFound } from './components/NotFound';
 import { Navigation } from './components/Navigation';
@@ -13,7 +13,7 @@ export function App() {
       <div className="main">
         <Routes>
           <Route path="/calculator" element={<Calculator />} />
-          <Route path="/convertor" element={<Convertor />} />
+          <Route path="/converter" element={<Converter />} />
           <Route path="/" element={<Calculator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

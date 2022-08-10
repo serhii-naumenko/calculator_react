@@ -23,9 +23,9 @@ export function Navigation() {
               ? 'Navigation__link--active'
               : 'Navigation__link'
             )}
-            to="/convertor"
+            to="/converter"
           >
-            Convertor
+            Converter
           </NavLink>
         </li>
         <li className="Navigation__item">
