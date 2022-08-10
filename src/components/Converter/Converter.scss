@@ -1,0 +1,21 @@
+.Converter {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 35px;
+  margin-top: 15px;
+
+  &__input {
+    padding-left: 10px;
+    border: 1px solid blue;
+    cursor: pointer;
+  }
+
+  &__actions-currency {
+    width: 100px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+}

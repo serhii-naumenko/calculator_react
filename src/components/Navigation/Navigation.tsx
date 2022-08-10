@@ -12,7 +12,7 @@ export function Navigation() {
               ? 'Navigation__link--active'
               : 'Navigation__link'
             )}
-            to="/calculator"
+            to="/"
           >
             Calculator
           </NavLink>

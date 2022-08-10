@@ -12,9 +12,8 @@ export function App() {
       <Navigation />
       <div className="main">
         <Routes>
-          <Route path="/calculator" element={<Calculator />} />
-          <Route path="/converter" element={<Converter />} />
           <Route path="/" element={<Calculator />} />
+          <Route path="/converter" element={<Converter />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
