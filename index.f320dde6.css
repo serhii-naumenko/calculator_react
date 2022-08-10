@@ -54,6 +54,28 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   display: flex;
 }
 
+.Converter {
+  text-align: center;
+  justify-content: space-around;
+  margin-top: 15px;
+  font-size: 35px;
+  display: flex;
+}
+
+.Converter__input {
+  cursor: pointer;
+  border: 1px solid #00f;
+  padding-left: 10px;
+}
+
+.Converter__actions-currency {
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
 .NotFound {
   text-align: center;
   color: red;
@@ -94,28 +116,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   color: #e01616;
   font-weight: bolder;
   text-decoration: underline;
-}
-
-.Converter {
-  text-align: center;
-  justify-content: space-around;
-  margin-top: 15px;
-  font-size: 35px;
-  display: flex;
-}
-
-.Converter__input {
-  cursor: pointer;
-  border: 1px solid #00f;
-  padding-left: 10px;
-}
-
-.Converter__actions-currency {
-  width: 100px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 25px;
-  font-weight: bolder;
 }
 
 /*# sourceMappingURL=index.f320dde6.css.map */

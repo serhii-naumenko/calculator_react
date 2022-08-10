@@ -27127,7 +27127,7 @@ function App() {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/calculator",
+                            path: "/",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _calculator.Calculator), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.tsx",
@@ -27143,19 +27143,11 @@ function App() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _calculator.Calculator), {}, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/App.tsx",
-                            lineNumber: 17,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "*",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _notFound.NotFound), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.tsx",
-                            lineNumber: 18,
+                            lineNumber: 17,
                             columnNumber: 11
                         }, this)
                     ]
@@ -27185,7 +27177,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./App.scss":"c8Etz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"fdOAw","./components/Calculator":"60XyO","./components/NotFound":"2IMz3","./components/Navigation":"lyfSW","./components/Converter":"fyzVI"}],"c8Etz":[function() {},{}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./App.scss":"c8Etz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"fdOAw","./components/Calculator":"60XyO","./components/Converter":"fyzVI","./components/NotFound":"2IMz3","./components/Navigation":"lyfSW"}],"c8Etz":[function() {},{}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -31169,142 +31161,7 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 }
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"7EuwB"}],"8TAiA":[function() {},{}],"2IMz3":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _notFound = require("./NotFound");
-parcelHelpers.exportAll(_notFound, exports);
-
-},{"./NotFound":"amYQW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"amYQW":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$62ec = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$62ec.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "NotFound", ()=>NotFound);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _notFoundScss = require("./NotFound.scss");
-function NotFound() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "NotFound",
-        children: "This is a 404 page"
-    }, void 0, false, {
-        fileName: "src/components/NotFound/NotFound.tsx",
-        lineNumber: 6,
-        columnNumber: 5
-    }, this);
-}
-_c = NotFound;
-var _c;
-$RefreshReg$(_c, "NotFound");
-
-  $parcel$ReactRefreshHelpers$62ec.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./NotFound.scss":"dY08S","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dY08S":[function() {},{}],"lyfSW":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _navigation = require("./Navigation");
-parcelHelpers.exportAll(_navigation, exports);
-
-},{"./Navigation":"fzeYQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fzeYQ":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$a3a0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$a3a0.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Navigation", ()=>Navigation);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-var _navigationScss = require("./Navigation.scss");
-function Navigation() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "Navigation",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-            className: "Navigation__list",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "Navigation__item",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
-                        className: ({ isActive  })=>isActive ? "Navigation__link--active" : "Navigation__link",
-                        to: "/calculator",
-                        children: "Calculator"
-                    }, void 0, false, {
-                        fileName: "src/components/Navigation/Navigation.tsx",
-                        lineNumber: 10,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/components/Navigation/Navigation.tsx",
-                    lineNumber: 9,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "Navigation__item",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
-                        className: ({ isActive  })=>isActive ? "Navigation__link--active" : "Navigation__link",
-                        to: "/converter",
-                        children: "Converter"
-                    }, void 0, false, {
-                        fileName: "src/components/Navigation/Navigation.tsx",
-                        lineNumber: 21,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/components/Navigation/Navigation.tsx",
-                    lineNumber: 20,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "Navigation__item",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
-                        className: ({ isActive  })=>isActive ? "Navigation__link--active" : "Navigation__link",
-                        to: "/aboutus",
-                        children: "About us"
-                    }, void 0, false, {
-                        fileName: "src/components/Navigation/Navigation.tsx",
-                        lineNumber: 32,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/components/Navigation/Navigation.tsx",
-                    lineNumber: 31,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/Navigation/Navigation.tsx",
-            lineNumber: 8,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "src/components/Navigation/Navigation.tsx",
-        lineNumber: 7,
-        columnNumber: 5
-    }, this);
-}
-_c = Navigation;
-var _c;
-$RefreshReg$(_c, "Navigation");
-
-  $parcel$ReactRefreshHelpers$a3a0.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","./Navigation.scss":"aYcFb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aYcFb":[function() {},{}],"fyzVI":[function(require,module,exports) {
+},{"react-is":"7EuwB"}],"8TAiA":[function() {},{}],"fyzVI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _converter = require("./Converter");
@@ -31569,7 +31426,142 @@ const getCouresesCurrencies = async ()=>{
  //   return result;
  // };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bdVon":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2IMz3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _notFound = require("./NotFound");
+parcelHelpers.exportAll(_notFound, exports);
+
+},{"./NotFound":"amYQW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"amYQW":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$62ec = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$62ec.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "NotFound", ()=>NotFound);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _notFoundScss = require("./NotFound.scss");
+function NotFound() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "NotFound",
+        children: "This is a 404 page"
+    }, void 0, false, {
+        fileName: "src/components/NotFound/NotFound.tsx",
+        lineNumber: 6,
+        columnNumber: 5
+    }, this);
+}
+_c = NotFound;
+var _c;
+$RefreshReg$(_c, "NotFound");
+
+  $parcel$ReactRefreshHelpers$62ec.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./NotFound.scss":"dY08S","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dY08S":[function() {},{}],"lyfSW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _navigation = require("./Navigation");
+parcelHelpers.exportAll(_navigation, exports);
+
+},{"./Navigation":"fzeYQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fzeYQ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a3a0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a3a0.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Navigation", ()=>Navigation);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _navigationScss = require("./Navigation.scss");
+function Navigation() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Navigation",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+            className: "Navigation__list",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "Navigation__item",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
+                        className: ({ isActive  })=>isActive ? "Navigation__link--active" : "Navigation__link",
+                        to: "/",
+                        children: "Calculator"
+                    }, void 0, false, {
+                        fileName: "src/components/Navigation/Navigation.tsx",
+                        lineNumber: 10,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/Navigation/Navigation.tsx",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "Navigation__item",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
+                        className: ({ isActive  })=>isActive ? "Navigation__link--active" : "Navigation__link",
+                        to: "/converter",
+                        children: "Converter"
+                    }, void 0, false, {
+                        fileName: "src/components/Navigation/Navigation.tsx",
+                        lineNumber: 21,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/Navigation/Navigation.tsx",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "Navigation__item",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.NavLink), {
+                        className: ({ isActive  })=>isActive ? "Navigation__link--active" : "Navigation__link",
+                        to: "/aboutus",
+                        children: "About us"
+                    }, void 0, false, {
+                        fileName: "src/components/Navigation/Navigation.tsx",
+                        lineNumber: 32,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/Navigation/Navigation.tsx",
+                    lineNumber: 31,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/Navigation/Navigation.tsx",
+            lineNumber: 8,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "src/components/Navigation/Navigation.tsx",
+        lineNumber: 7,
+        columnNumber: 5
+    }, this);
+}
+_c = Navigation;
+var _c;
+$RefreshReg$(_c, "Navigation");
+
+  $parcel$ReactRefreshHelpers$a3a0.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","./Navigation.scss":"aYcFb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aYcFb":[function() {},{}],"bdVon":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "batch", ()=>(0, _reactBatchedUpdates.unstable_batchedUpdates));
