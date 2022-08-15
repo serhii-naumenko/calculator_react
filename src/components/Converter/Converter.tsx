@@ -100,7 +100,7 @@ export function Converter() {
           UAH
         </p>
         <input
-          type="text"
+          type="number"
           className="Converter__input"
           name="amount"
           placeholder="enter amount"
@@ -152,7 +152,7 @@ export function Converter() {
           {exchangeCurrency}
         </p>
         <input
-          type="text"
+          type="number"
           className="Converter__input"
           name="amount"
           value={(Math.round(+secondValue * 100) / 100).toString()}
