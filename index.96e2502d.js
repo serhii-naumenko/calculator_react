@@ -31277,7 +31277,7 @@ function Converter() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
+                        type: "number",
                         className: "Converter__input",
                         name: "amount",
                         placeholder: "enter amount",
@@ -31367,7 +31367,7 @@ function Converter() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
+                        type: "number",
                         className: "Converter__input",
                         name: "amount",
                         value: (Math.round(+secondValue * 100) / 100).toString(),
